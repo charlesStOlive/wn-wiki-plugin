@@ -1,0 +1,127 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Options avances
+    fields:
+        # title:
+        #     label: Titre
+        #     default: Titre du bloc
+        name:
+            label: Code / Slug de la page 
+            tab: base
+        show_title:
+            label: Afficher le titre de la page
+            type: checkbox
+            tab: base
+        show_wiki_link:
+            label: Afficher le lien wikipedia
+            type: checkbox
+            tab: base
+            default: true
+        show_image:
+            label: Afficher une image
+            type: dropdown
+            tab: base
+            span: left
+            options: 
+                original: Photo originale
+                thumbnail: Vignette
+                none: Aucune
+        s_opt_t:
+            label: Option globales
+            type: section
+        opt_env_colors:
+            label: Univer coloriel
+            type: dropdown
+            span: left
+            options:
+                null: inherit
+                env-white: "Txt noir | Bg : blanc"
+                env-primary: "Txt blanc | Bg : Couleur primaire"
+                env-secondary: "Txt blanc | Bg : Couleur secondaire"
+                env-trans: "Txt Noir | Bg : Trasparent"
+                env-trans-dark: "Txt blanc | Bg : Transparent"
+        opt_center_container:
+            label: Centrer le container ( ajoute mx-auto )
+            type: checkbox
+            span: storm
+            cssClass: col-xs-3 m-t-md
+            default: true
+        opt_center_content:
+            label: Centrer le contenu (Si éxiste)
+            type: checkbox
+            span: storm
+            cssClass: col-xs-3 m-t-md
+        opt_style_container:
+            label: Styles du container
+            comment: Separer les styles avec ';'
+    
+        # BLOC IMAGE TOUT EST LIEE AU HELPER : RuleHelpers dans classes/traits/utils
+        # s_img:
+        #     label: Option image
+        #     type: section
+        # img_link:   
+        #     label: lien de l'image
+        #     placeholder: "{{ url('lp/...') }}"
+        #     dependsOn: imageMode
+        #     span: storm
+        #     cssClass: col-xs-4
+        # img_link_data_opt:   
+        #     label: Ajouter d'autres attributs
+        #     placeholder: data-wtoogle="xxx"
+        #     span: storm
+        #     cssClass: col-xs-4
+        # img_link_blank:
+        #     label: Ouverture dans une nouvelle fenêtre
+        #     type: checkbox
+        #     dependsOn: imageMode
+        #     span: storm
+        #     cssClass: col-xs-4 m-t-md
+        opt_i_place:
+            type: dropdown
+            label: Placement de l'image
+            span: full
+            options: 
+                upper: Au dessus du texte
+                bottom: En dessous du texte
+                before: En ligne préscedent le contenu
+                after: En ligne Apès le contenu
+                
+        # FIN DU BLOC DYNAMYQYE DE GESTION DES IMAGES
+        txt_size:
+            label: Taille en % de l'espace textes
+            default: 100%
+            span: left
+        img_size:
+            label: Taille en % de l'espace image
+            default: 50%
+            span: right
+        
+        s_opti:
+            label: Option pour l'image
+            type: section
+        opt_i_cover:
+            type: checkbox
+            label: object-cover ?
+            span: left
+            defaultValue: 1
+        opt_center_image:
+            label: Centrer l'image
+            type: checkbox
+            span: right
+        opt_i_width:
+            label: width
+            span: storm
+            cssClass: col-xs-4
+        opt_i_height:
+            label: height
+            span: storm
+            cssClass: col-xs-4
+            
+            
+
+
+
+

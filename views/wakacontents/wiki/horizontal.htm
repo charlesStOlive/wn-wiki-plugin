@@ -1,0 +1,30 @@
+
+<div class="h-full flex flex-wrap items-center px-2 py-1 ">
+    {% if data.show_image == 'thumbnail' %}
+            {% set  wikiImage = data.thumbnail %}
+        {% elseif  data.show_image == 'original' %}
+            {% set  wikiImage = data.original %}
+        {% endif %}
+    {% if data.show_title %}<h2 class="w-full">{{data.title}}</h2>{% endif %}
+    <div class="flex items-stretch gap-2 w-full max-h-full">
+        <div class="prose max-w-none {% if data.opt_center_content %}mx-auto text-center{% endif %} " style="width:{{data.txt_size | default('100%')}}">
+                {{data.extract | raw}}{% if data.show_wiki_link %} <a href="https://fr.wikipedia.org/?curid={{data.pageid}}"  target="_blank">Source wikipedia</a>{% endif %}
+        </div>
+        {% if wikiImage %} 
+        <div style="width:{{data.img_size | default('50%')}}" class="{% if data.opt_center_content %}mx-auto{% endif %}">
+        <img class="
+        {% if data.opt_i_cover %}object-cover{% else %} object-contain{% endif %}
+        {% if data.shadow %}shadow-lg{% endif %}
+        {% if data.opt_center_image %}mx-auto{% endif %}
+        {% if not wikiImage.width  %}h-full{% endif %}
+        {% if notwikiImage.height  %}w-full{% endif %}"
+        src="{{ wikiImage.source }}"
+        width="{{wikiImage.width}}"
+        height="{{wikiImage.height}}"
+        alt="Illustration"
+            
+            />
+        </div>
+        {% endif %}
+    </div>
+</div>
