@@ -114,14 +114,6 @@ class Plugin extends PluginBase
     public function registerPermissions(): array
     {
         return []; // Remove this line to activate
-
-        return [
-            'waka.wiki.some_permission' => [
-                'tab' => 'waka.wiki::lang.plugin.name',
-                'label' => 'waka.wiki::lang.permissions.some_permission',
-                'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
-            ],
-        ];
     }
 
     /**
